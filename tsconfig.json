@@ -1,26 +1,34 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "target": "esnext", // تنظیم نسخه خروجی جاوااسکریپت
+    "lib": ["dom", "dom.iterable", "esnext"], // اضافه کردن ویژگی‌های DOM و ESNext
+    "allowJs": true, // اجازه به استفاده از فایل‌های JS
+    "skipLibCheck": true, // عدم بررسی فایل‌های کتابخانه برای سرعت بیشتر
+    "strict": true, // فعال کردن حالت Strict TypeScript
+    "noEmit": true, // عدم تولید فایل‌های خروجی جاوااسکریپت
+    "esModuleInterop": true, // سازگاری با ماژول‌های CommonJS
+    "module": "esnext", // تنظیم نوع ماژول برای ESNext
+    "moduleResolution": "node", // استفاده از رزولوشن ماژول Node.js
+    "resolveJsonModule": true, // اجازه به وارد کردن فایل‌های JSON
+    "isolatedModules": true, // فعال‌سازی ماژول‌های مستقل برای Next.js
+    "jsx": "preserve", // حفظ JSX برای Next.js
+    "incremental": true, // سرعت بیشتر در کامپایل مجدد
+    "types": ["node"], // اضافه کردن تایپ‌های Node.js
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // استفاده از پلاگین Next.js
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // تنظیم مسیرهای آلیاس
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts", // فایل محیط Next.js
+    "**/*.ts", // شامل کردن تمام فایل‌های TS
+    "**/*.tsx", // شامل کردن تمام فایل‌های TSX
+    ".next/types/**/*.ts", // فایل‌های مرتبط با Next.js
+    "server.ts" // اضافه کردن سرور Node.js
+  ],
+  "exclude": ["node_modules", "dist"] // حذف فایل‌های غیرضروری
 }
