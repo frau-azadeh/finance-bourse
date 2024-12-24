@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { DataItem } from '../services/dataService';
+import { useState, useMemo } from "react";
+import { DataItem } from "../services/dataService";
 
 interface UsePaginatedDataProps {
   data: DataItem[];
@@ -7,16 +7,16 @@ interface UsePaginatedDataProps {
 }
 
 const usePaginatedData = ({ data, itemsPerPage }: UsePaginatedDataProps) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   // فیلتر کردن داده‌ها بر اساس جستجو
   const filteredData = useMemo(
     () =>
       data.filter((item) =>
-        item.Industry.toLowerCase().includes(searchQuery.toLowerCase())
+        item.Industry.toLowerCase().includes(searchQuery.toLowerCase()),
       ),
-    [data, searchQuery]
+    [data, searchQuery],
   );
 
   // محاسبه داده‌های صفحه فعلی
@@ -24,7 +24,7 @@ const usePaginatedData = ({ data, itemsPerPage }: UsePaginatedDataProps) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentData = useMemo(
     () => filteredData.slice(indexOfFirstItem, indexOfLastItem),
-    [filteredData, indexOfFirstItem, indexOfLastItem]
+    [filteredData, indexOfFirstItem, indexOfLastItem],
   );
 
   // تعداد صفحات

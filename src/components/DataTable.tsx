@@ -1,5 +1,5 @@
-import React from 'react';
-import { DataItem } from '../services/dataService';
+import React from "react";
+import { DataItem } from "../services/dataService";
 
 interface DataTableProps {
   data: DataItem[];
@@ -20,10 +20,12 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
         <tbody>
           {data.map((item, index) => (
             <tr key={index} className="text-center hover:bg-gray-100">
-              <td className="px-4 py-2 border">{item.name ?? 'N/A'}</td>
-              <td className="px-4 py-2 border">{item.Full_Name ?? 'Unknown'}</td>
-              <td className="px-4 py-2 border">{item.eps ?? 'N/A'}</td>
-              <td className="px-4 py-2 border">{item.Industry ?? 'N/A'}</td>
+              <td className="px-4 py-2 border">{item.name ?? "N/A"}</td>
+              <td className="px-4 py-2 border">
+                {item.Full_Name ?? "Unknown"}
+              </td>
+              <td className="px-4 py-2 border">{item.eps ?? "N/A"}</td>
+              <td className="px-4 py-2 border">{item.Industry ?? "N/A"}</td>
             </tr>
           ))}
         </tbody>

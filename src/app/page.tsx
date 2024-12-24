@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import useFetchData from '../hooks/useFetchData';
-import usePaginatedData from '../hooks/usePaginatedData';
-import useIndustryMetrics from '../hooks/useIndustryMetrics'; // هوک برای محاسبه اطلاعات صنعت
-import DataTable from '../components/DataTable';
-import Pagination from '../components/Pagination';
-import SearchBar from '../components/SearchBar';
-import MetricBox from '../components/MetricBox'; // کامپوننت برای نمایش اطلاعات در باکس
+import React from "react";
+import useFetchData from "../hooks/useFetchData";
+import usePaginatedData from "../hooks/usePaginatedData";
+import useIndustryMetrics from "../hooks/useIndustryMetrics"; // هوک برای محاسبه اطلاعات صنعت
+import DataTable from "../components/DataTable";
+import Pagination from "../components/Pagination";
+import SearchBar from "../components/SearchBar";
+import MetricBox from "../components/MetricBox"; // کامپوننت برای نمایش اطلاعات در باکس
 
 const Dashboard: React.FC = () => {
   const { data, isLoading, error } = useFetchData();
@@ -23,10 +23,8 @@ const Dashboard: React.FC = () => {
   } = usePaginatedData({ data, itemsPerPage });
 
   // استفاده از هوک برای محاسبه بالاترین تغییرات صعودی و نزولی در صنعت دارویی
-  const { highestPositiveChangeItem, highestNegativeChangeItem } = useIndustryMetrics(
-    data,
-    'مواد و محصولات دارویی'
-  );
+  const { highestPositiveChangeItem, highestNegativeChangeItem } =
+    useIndustryMetrics(data, "مواد و محصولات دارویی");
 
   if (isLoading) {
     return <p className="text-center mt-10 text-blue-500">Loading...</p>;
@@ -47,9 +45,15 @@ const Dashboard: React.FC = () => {
           title="Highest Positive Change"
           color="green"
           data={[
-            { label: 'Name', value: highestPositiveChangeItem.name },
-            { label: 'Change', value: highestPositiveChangeItem.LastTradedPrice_change },
-            { label: 'Last Traded Price', value: highestPositiveChangeItem.LastTradedPrice },
+            { label: "Name", value: highestPositiveChangeItem.name },
+            {
+              label: "Change",
+              value: highestPositiveChangeItem.LastTradedPrice_change,
+            },
+            {
+              label: "Last Traded Price",
+              value: highestPositiveChangeItem.LastTradedPrice,
+            },
           ]}
         />
 
@@ -58,9 +62,15 @@ const Dashboard: React.FC = () => {
           title="Highest Negative Change"
           color="red"
           data={[
-            { label: 'Name', value: highestNegativeChangeItem.name },
-            { label: 'Change', value: highestNegativeChangeItem.LastTradedPrice_change },
-            { label: 'Last Traded Price', value: highestNegativeChangeItem.LastTradedPrice },
+            { label: "Name", value: highestNegativeChangeItem.name },
+            {
+              label: "Change",
+              value: highestNegativeChangeItem.LastTradedPrice_change,
+            },
+            {
+              label: "Last Traded Price",
+              value: highestNegativeChangeItem.LastTradedPrice,
+            },
           ]}
         />
       </div>

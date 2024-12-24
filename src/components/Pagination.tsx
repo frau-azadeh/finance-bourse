@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PaginationProps {
   totalItems: number;
@@ -26,7 +26,7 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className="flex justify-center mt-4">
       <button
-        className={`px-4 py-2 mx-1 border rounded ${currentPage === 1 ? 'bg-gray-300' : 'bg-white'}`}
+        className={`px-4 py-2 mx-1 border rounded ${currentPage === 1 ? "bg-gray-300" : "bg-white"}`}
         onClick={() => handlePageClick(currentPage - 1)}
       >
         Previous
@@ -35,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({
         <button
           key={i}
           className={`px-4 py-2 mx-1 border rounded ${
-            currentPage === i + 1 ? 'bg-blue-500 text-white' : 'bg-white'
+            currentPage === i + 1 ? "bg-blue-500 text-white" : "bg-white"
           }`}
           onClick={() => handlePageClick(i + 1)}
         >
@@ -44,7 +44,7 @@ const Pagination: React.FC<PaginationProps> = ({
       ))}
       <button
         className={`px-4 py-2 mx-1 border rounded ${
-          currentPage === totalPages ? 'bg-gray-300' : 'bg-white'
+          currentPage === totalPages ? "bg-gray-300" : "bg-white"
         }`}
         onClick={() => handlePageClick(currentPage + 1)}
       >
