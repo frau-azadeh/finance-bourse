@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { fetchAllData, DataItem } from '../services/dataService';
+import { useState, useEffect } from "react";
+import { fetchAllData, DataItem } from "../services/dataService";
 
 const useFetchData = () => {
   const [data, setData] = useState<DataItem[]>([]);

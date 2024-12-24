@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import useFetchData from '../hooks/useFetchData';
-import DataTable from '../components/DataTable';
+import React from "react";
+import useFetchData from "../hooks/useFetchData";
+import DataTable from "../components/DataTable";
 
 const Dashboard: React.FC = () => {
   const { data, isLoading, error } = useFetchData();
@@ -17,7 +17,9 @@ const Dashboard: React.FC = () => {
 
   // بررسی اینکه داده‌ها آرایه هستند
   if (!Array.isArray(data)) {
-    return <p className="text-center mt-10 text-red-500">Invalid data format</p>;
+    return (
+      <p className="text-center mt-10 text-red-500">Invalid data format</p>
+    );
   }
 
   return (

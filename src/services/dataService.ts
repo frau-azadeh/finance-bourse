@@ -8,7 +8,9 @@ export interface DataItem {
 
 export const fetchAllData = async (): Promise<DataItem[]> => {
   try {
-    const response = await fetch(`http://localhost:5000/data?_=${new Date().getTime()}`);
+    const response = await fetch(
+      `http://localhost:5000/data?_=${new Date().getTime()}`,
+    );
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }
@@ -19,10 +21,10 @@ export const fetchAllData = async (): Promise<DataItem[]> => {
     if (json.ok && Array.isArray(json.data)) {
       return json.data;
     } else {
-      throw new Error('Invalid data format');
+      throw new Error("Invalid data format");
     }
   } catch (error: any) {
-    console.error('Fetch error:', error.message);
-    throw new Error('Failed to fetch data');
+    console.error("Fetch error:", error.message);
+    throw new Error("Failed to fetch data");
   }
 };
