@@ -2,17 +2,21 @@
   "name": "finance-bourse",
   "version": "0.1.0",
   "private": true,
+  "type": "module", 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "prettier:fix": "prettier --write .",
+    "server": "ts-node src/server.ts"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "next": "14.2.20",
     "prettier": "^3.4.2",
     "react": "^18",
@@ -21,13 +25,28 @@
     "redux": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.20",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  }
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "description": "<<<<<<< HEAD #Finance Bourse =======",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frau-azadeh/finance-bourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frau-azadeh/finance-bourse/issues"
+  },
+  "homepage": "https://github.com/frau-azadeh/finance-bourse#readme"
 }
