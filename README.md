@@ -38,7 +38,7 @@ A responsive and visually appealing Finance Dashboard to display financial data,
 
 Clone the repository:
 
-git clone https://github.com/yourusername/finance-dashboard.git
+git clone https://github.com/frau-azadeh/finance-dashboard.git
 cd finance-dashboard
 
 Install dependencies:
