@@ -1,8 +1,8 @@
-##Finance Dashboard
+# Finance Dashboard
 
 A responsive and visually appealing Finance Dashboard to display financial data, industry trends, and dynamic charts. Built using modern web technologies, this project is optimized for both functionality and user experience.
 
-##Features
+## Features
 
 📊 Dynamic Charts: Interactive bar and donut charts using Chart.js.
 
@@ -16,7 +16,7 @@ A responsive and visually appealing Finance Dashboard to display financial data,
 
 📈 Industry Metrics: Highlight key data with highest positive and negative changes.
 
-##Frontend
+## Frontend
 
 ⚛️ React: JavaScript library for building user interfaces.
 
@@ -28,13 +28,13 @@ A responsive and visually appealing Finance Dashboard to display financial data,
 
 🌟 React Icons: Icon library for financial icons.
 
-##Backend
+## Backend
 
 🚀 Express.js: Node.js web framework.
 
 🗄️ JSON Data: Simulates API responses.
 
-##Installation
+## Installation
 
 Clone the repository:
 
@@ -56,7 +56,7 @@ npm run server
 Open the app:
 Navigate to http://localhost:3000 in your browser.
 
-##Folder Structure
+## Folder Structure
 
 finance-dashboard/
 ├── public/
@@ -90,7 +90,7 @@ finance-dashboard/
 ├── tsconfig.json
 ├── README.md
 
-##Environment Variables
+## Environment Variables
 
 Set the following environment variables in a .env file:
 
@@ -114,7 +114,7 @@ Pagination
 
 🔄 Smooth and responsive pagination for data navigation.
 
-##Contributors
+## Contributors
 
 🌻 Azadeh Sharifi Soltani
 
