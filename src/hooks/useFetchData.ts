@@ -9,10 +9,14 @@ const useFetchData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setIsLoading(true);
+        setError(null);
         const result = await fetchAllData();
+        console.log("Fetched Data:", result); // بررسی داده‌ها
         setData(result);
       } catch (err: any) {
-        setError(err.message);
+        console.error("Error fetching data:", err.message);
+        setError(err.message || "Failed to fetch data");
       } finally {
         setIsLoading(false);
       }

@@ -8,16 +8,14 @@ export interface DataItem {
 
 export const fetchAllData = async (): Promise<DataItem[]> => {
   try {
-    const response = await fetch(
-      `http://localhost:5000/data?_=${new Date().getTime()}`,
-    );
+    const response = await fetch(`http://localhost:5000/data`);
+
     if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.statusText}`);
+      throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
 
-    const json = await response.json();
+    const json: { ok: boolean; data: DataItem[] } = await response.json();
 
-    // بازگرداندن فقط آرایه داده‌ها
     if (json.ok && Array.isArray(json.data)) {
       return json.data;
     } else {
@@ -25,6 +23,6 @@ export const fetchAllData = async (): Promise<DataItem[]> => {
     }
   } catch (error: any) {
     console.error("Fetch error:", error.message);
-    throw new Error("Failed to fetch data");
+    throw error;
   }
 };

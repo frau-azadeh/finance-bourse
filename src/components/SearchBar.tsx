@@ -7,14 +7,16 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
   return (
-    <div className="flex justify-center mb-4">
-      <input
-        type="text"
-        className="px-4 py-2 border rounded w-1/2"
-        placeholder="Search by Industry"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
+    <div className="mb-6">
+      <div className="flex justify-end">
+        <input
+          type="text"
+          className="w-full md:w-2/3 lg:w-full px-4 py-3 border border-gray-300 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-gray-700 text-right transition duration-300"
+          placeholder="🔍 جستجو بر اساس صنعت..."
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      </div>
     </div>
   );
 };
