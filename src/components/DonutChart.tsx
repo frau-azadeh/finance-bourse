@@ -1,11 +1,6 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  TooltipItem,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, TooltipItem } from "chart.js";
 
 // ثبت پلاگین‌های Chart.js
 ChartJS.register(ArcElement, Tooltip);
@@ -69,7 +64,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
           label: function (context: TooltipItem<"doughnut">) {
             const percentage = ((context.raw as number) / total) * 100;
             return `${context.label}: ${context.raw} (${percentage.toFixed(
-              2
+              2,
             )}%)`;
           },
         },
@@ -79,7 +74,9 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
 
   return (
     <div className="w-full md:w-1/2 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold text-center mb-4">Top 10 Industries</h2>
+      <h2 className="text-lg font-semibold text-center mb-4">
+        Top 10 Industries
+      </h2>
       <Doughnut data={chartData} options={options} />
       <p className="text-center text-gray-500 mt-2">Share of top industries</p>
     </div>

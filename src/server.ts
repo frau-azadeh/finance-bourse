@@ -18,7 +18,8 @@ const filePath = path.join(__dirname, "data.json");
 // تابع برای دریافت داده‌ها از API و ذخیره در فایل JSON
 const fetchAndSaveData = async () => {
   try {
-    const apiUrl = "https://bourse.chartapi.ir/ickvopfg9pb5dno6kqmnpg7o7dvd4sx1/alldata";
+    const apiUrl =
+      "https://bourse.chartapi.ir/ickvopfg9pb5dno6kqmnpg7o7dvd4sx1/alldata";
     const response = await axios.get(apiUrl);
 
     // بررسی ساختار داده‌ها و ذخیره در فایل
@@ -46,7 +47,9 @@ app.get("/data", (req: Request, res: Response): void => {
     const fileContent = fs.readFileSync(filePath, "utf-8");
 
     if (!fileContent || fileContent.trim() === "") {
-      res.status(500).json({ ok: false, error: "Data file is empty or invalid" });
+      res
+        .status(500)
+        .json({ ok: false, error: "Data file is empty or invalid" });
       return;
     }
 

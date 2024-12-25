@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { DataItem } from '../services/dataService';
+import { useMemo } from "react";
+import { DataItem } from "../services/dataService";
 
 const useIndustryComparison = (data: DataItem[]) => {
   const industryData = useMemo(() => {

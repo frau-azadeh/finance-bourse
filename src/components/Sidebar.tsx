@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaHome, FaChartBar, FaCog, FaQuestionCircle, FaBars } from "react-icons/fa";
+import {
+  FaHome,
+  FaChartBar,
+  FaCog,
+  FaQuestionCircle,
+  FaBars,
+} from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,11 +58,9 @@ const Sidebar: React.FC = () => {
                   <span>{item.label}</span>
                 </li>
               ))}
-               
             </ul>
           </div>
         )}
-       
       </div>
     </>
   );

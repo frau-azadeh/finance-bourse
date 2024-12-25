@@ -27,8 +27,9 @@ const BarChart: React.FC<BarChartProps> = ({ data }) => {
       {
         label: "Industry Comparison",
         data: values,
-        backgroundColor: labels.map((_, index) =>
-          `rgba(${100 + index * 15}, ${150 - index * 10}, ${200 - index * 10}, 0.8)`
+        backgroundColor: labels.map(
+          (_, index) =>
+            `rgba(${100 + index * 15}, ${150 - index * 10}, ${200 - index * 10}, 0.8)`,
         ), // رنگ‌های گرادیانت برای هر میله
         borderColor: "rgba(0,0,0,0.1)",
         borderWidth: 1,
@@ -72,7 +73,6 @@ const BarChart: React.FC<BarChartProps> = ({ data }) => {
       },
       y: {
         ticks: {
-         
           font: {
             size: 12,
           },
@@ -96,7 +96,9 @@ const BarChart: React.FC<BarChartProps> = ({ data }) => {
 
   return (
     <div className="w-full md:w-3/4 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold text-center mb-4">Industry Comparison</h2>
+      <h2 className="text-lg font-semibold text-center mb-4">
+        Industry Comparison
+      </h2>
       <Bar data={chartData} options={options} />
     </div>
   );

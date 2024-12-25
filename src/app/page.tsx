@@ -55,13 +55,13 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header/>
+      <Header />
       <div className="flex flex-1">
         {/* سایدبار */}
         <Sidebar />
 
         {/* محتوای اصلی */}
-        <div className="flex-1 mr-0 md:mr-64 p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">        
+        <div className="flex-1 mr-0 md:mr-64 p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* ستون وسط */}
           <div className="space-y-6 lg:col-span-2">
             <div className="grid grid-cols-2 gap-4">
@@ -106,8 +106,8 @@ const Dashboard: React.FC = () => {
             />
             <BarChart data={industryDistribution} />
           </div>
-           {/* ستون چپ */}
-           <div className="space-y-6 lg:col-span-1">
+          {/* ستون چپ */}
+          <div className="space-y-6 lg:col-span-1">
             <DonutChart data={industryDistribution} />
             <PriceTable title="Top 5 Lowest Prices" data={lowest5} />
             <PriceTable title="Top 5 Highest Prices" data={top5} />

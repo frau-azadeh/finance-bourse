@@ -1,4 +1,4 @@
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from "./ThemeToggle";
 
 const Header: React.FC = () => {
   return (

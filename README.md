@@ -61,30 +61,30 @@ Navigate to http://localhost:3000 in your browser.
 finance-dashboard/
 ├── public/
 ├── src/
-│   ├── components/
-│   │   ├── BarChart.tsx
-│   │   ├── DataTable.tsx
-│   │   ├── DonutChart.tsx
-│   │   ├── Footer.tsx
-│   │   ├── MetricBox.tsx
-│   │   ├── Pagination.tsx
-│   │   ├── PriceTable.tsx
-│   │   ├── SearchBar.tsx
-│   │   ├── Sidebar.tsx
-│   ├── context/
-│   │   ├── ThemeContext.tsx
-│   ├── hooks/
-│   │   ├── useFetchData.ts
-│   │   ├── usePaginatedData.ts
-│   │   ├── useIndustryMetrics.ts
-│   │   ├── useTopAndLowestPrices.ts
-│   ├── pages/
-│   │   ├── Dashboard.tsx
-│   ├── services/
-│   │   ├── dataService.ts
-│   ├── styles/
-│   │   ├── globals.css
-│   ├── tailwind.config.js
+│ ├── components/
+│ │ ├── BarChart.tsx
+│ │ ├── DataTable.tsx
+│ │ ├── DonutChart.tsx
+│ │ ├── Footer.tsx
+│ │ ├── MetricBox.tsx
+│ │ ├── Pagination.tsx
+│ │ ├── PriceTable.tsx
+│ │ ├── SearchBar.tsx
+│ │ ├── Sidebar.tsx
+│ ├── context/
+│ │ ├── ThemeContext.tsx
+│ ├── hooks/
+│ │ ├── useFetchData.ts
+│ │ ├── usePaginatedData.ts
+│ │ ├── useIndustryMetrics.ts
+│ │ ├── useTopAndLowestPrices.ts
+│ ├── pages/
+│ │ ├── Dashboard.tsx
+│ ├── services/
+│ │ ├── dataService.ts
+│ ├── styles/
+│ │ ├── globals.css
+│ ├── tailwind.config.js
 │
 ├── package.json
 ├── tsconfig.json
@@ -121,4 +121,3 @@ Pagination
 Feel free to contribute to this project by submitting a pull request or opening an issue!
 
 Made with 💻, ☕, and 🌻 by Azadeh Sharifi Soltani
-

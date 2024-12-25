@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class', // فعال کردن حالت تیره با استفاده از کلاس
+  darkMode: "class", // فعال کردن حالت تیره با استفاده از کلاس
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
