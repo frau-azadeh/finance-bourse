@@ -347,11 +347,11 @@
     "buy_CountI": 62,
     "buy_CountN": 2,
     "buy_I_Volume": 2030453,
-    "buy_N_Volume": 11768631,
+    "buy_N_Volume": 11617252,
     "sell_CountI": 109,
     "sell_CountN": 3,
     "sell_I_Volume": 8392826,
-    "sell_N_Volume": 5406258
+    "sell_N_Volume": 5254879
   },
   {
     "name": "اسیاتک",
@@ -15094,13 +15094,13 @@
     "sellPrice_5": 20763,
     "sellvolume_5": 50000,
     "Nosell_5": 1,
-    "buy_CountI": 20,
+    "buy_CountI": 21,
     "buy_CountN": 2,
-    "buy_I_Volume": 3196210,
+    "buy_I_Volume": 3305894,
     "buy_N_Volume": 3949736,
-    "sell_CountI": 20,
+    "sell_CountI": 22,
     "sell_CountN": 1,
-    "sell_I_Volume": 4226024,
+    "sell_I_Volume": 4335708,
     "sell_N_Volume": 2919922
   },
   {
@@ -31735,11 +31735,11 @@
     "buy_CountI": 575,
     "buy_CountN": 15,
     "buy_I_Volume": 30546024,
-    "buy_N_Volume": 94146249,
+    "buy_N_Volume": 94202009,
     "sell_CountI": 546,
     "sell_CountN": 19,
     "sell_I_Volume": 26863073,
-    "sell_N_Volume": 97829200
+    "sell_N_Volume": 97884960
   },
   {
     "name": "ورنا",
