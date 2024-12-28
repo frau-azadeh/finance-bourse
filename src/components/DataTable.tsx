@@ -9,12 +9,13 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
   return (
     <div className="overflow-x-auto rounded-lg shadow-md">
       <table className="table-auto w-full border-collapse bg-white text-gray-800">
-        <thead className="bg-blue-500 text-white">
+        <thead className="bg-green-700 text-white dark:bg-[#334155]">
           <tr>
-            <th className="px-4 py-3 border border-gray-300">Name</th>
-            <th className="px-4 py-3 border border-gray-300">Full Name</th>
-            <th className="px-4 py-3 border border-gray-300">EPS</th>
-            <th className="px-4 py-3 border border-gray-300">Industry</th>
+            <th className="px-4 py-3 border border-gray-300">برند</th>
+            <th className="px-4 py-3 border border-gray-300">نام شرکت</th>
+            <th className="px-4 py-3 border border-gray-300">قیمت</th>
+            <th className="px-4 py-3 border border-gray-300">تغییر</th>
+            <th className="px-4 py-3 border border-gray-300">صنعت</th>
           </tr>
         </thead>
         <tbody>
@@ -22,8 +23,10 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
             <tr
               key={index}
               className={`text-center ${
-                index % 2 === 0 ? "bg-gray-100" : "bg-white"
-              } hover:bg-blue-100 transition duration-200`}
+                index % 2 === 0
+                  ? "bg-yellow-100 dark:bg-[#cbd5e1]"
+                  : "bg-white dark:bg-[#475569]"
+              } hover:bg-lime-200 transition duration-200 dark:hover:bg-slate-500`}
             >
               <td className="px-4 py-3 border border-gray-300">
                 {item.name ?? "N/A"}
@@ -32,7 +35,17 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                 {item.Full_Name ?? "Unknown"}
               </td>
               <td className="px-4 py-3 border border-gray-300">
-                {item.eps ?? "N/A"}
+                {item.LastTradedPrice ?? "N/A"}
+              </td>
+
+              <td
+                className={`px-4 py-3 border border-gray-300 ${
+                  item.LastTradedPrice_change >= 0
+                    ? "text-green-500"
+                    : "text-red-500"
+                }`}
+              >
+                {item.LastTradedPrice_change}
               </td>
               <td className="px-4 py-3 border border-gray-300">
                 {item.Industry ?? "N/A"}
