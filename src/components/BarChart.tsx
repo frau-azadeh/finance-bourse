@@ -20,7 +20,6 @@ interface BarChartProps {
 const BarChart: React.FC<BarChartProps> = ({ data }) => {
   const labels = Object.keys(data);
   const values = Object.values(data);
-
   const chartData: ChartData<"bar"> = {
     labels,
     datasets: [
@@ -95,9 +94,9 @@ const BarChart: React.FC<BarChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="w-full md:w-3/4 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md">
+    <div className="w-full md:w-3/4 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md ">
       <h2 className="text-lg font-semibold text-center mb-4">
-        Industry Comparison
+        مقایسه صنعت ها در نمودار امروز
       </h2>
       <Bar data={chartData} options={options} />
     </div>
