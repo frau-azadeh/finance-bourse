@@ -26,13 +26,13 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className="flex justify-center mt-6">
-      <div className="p-4 bg-white shadow-md rounded-lg flex items-center gap-4">
+      <div className="p-4 bg-white shadow-md rounded-lg flex items-center gap-4 dark:bg-[#334155]">
         {/* دکمه قبلی */}
         <button
           className={`flex items-center justify-center px-3 py-2 text-sm font-medium rounded-full shadow ${
             currentPage === 1
               ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-green-700 text-white hover:bg-green-700 dark:bg-slate-950"
           }`}
           onClick={() => handlePageClick(currentPage - 1)}
           disabled={currentPage === 1}
@@ -47,8 +47,8 @@ const Pagination: React.FC<PaginationProps> = ({
               key={i}
               className={`flex items-center justify-center px-3 py-2 text-sm font-medium rounded-full shadow ${
                 currentPage === i + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-green-700 text-white dark:bg-slate-500"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-slate-950 dark:text-white"
               }`}
               onClick={() => handlePageClick(i + 1)}
             >
@@ -62,7 +62,7 @@ const Pagination: React.FC<PaginationProps> = ({
           className={`flex items-center justify-center px-3 py-2 text-sm font-medium rounded-full shadow ${
             currentPage === totalPages
               ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-green-700 text-white hover:bg-green-700 dark:bg-slate-950"
           }`}
           onClick={() => handlePageClick(currentPage + 1)}
           disabled={currentPage === totalPages}

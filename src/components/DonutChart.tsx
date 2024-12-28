@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, TooltipItem } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 // ثبت پلاگین‌های Chart.js
-ChartJS.register(ArcElement, Tooltip);
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface DonutChartProps {
   data: { [key: string]: number }; // داده‌هایی که درصد سهم هر صنعت را نشان می‌دهند
 }
 
 const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const updateDarkMode = () => {
+      const darkModeEnabled =
+        document.documentElement.classList.contains("dark");
+      setIsDarkMode(darkModeEnabled);
+    };
+
+    // فراخوانی اولیه و همچنین شنیدن تغییرات دارک مد
+    updateDarkMode();
+    const observer = new MutationObserver(updateDarkMode);
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   // گرفتن 10 صنعت برتر
   const sortedData = Object.entries(data)
     .sort(([, a], [, b]) => b - a)
@@ -40,7 +57,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
         ],
         borderColor: "#FFFFFF",
         borderWidth: 2,
-        hoverOffset: 10, // فاصله هنگام هاور
+        hoverOffset: 10,
       },
     ],
   };
@@ -49,23 +66,13 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
     responsive: true,
     plugins: {
       legend: {
-        display: true,
-        position: "bottom" as const,
-        labels: {
-          boxWidth: 15,
-          font: {
-            size: 14,
-          },
-          color: "#555",
-        },
+        display: false, // حذف نوشته‌های پایین نمودار
       },
       tooltip: {
         callbacks: {
-          label: function (context: TooltipItem<"doughnut">) {
+          label: function (context: any) {
             const percentage = ((context.raw as number) / total) * 100;
-            return `${context.label}: ${context.raw} (${percentage.toFixed(
-              2,
-            )}%)`;
+            return `${context.label}: ${context.raw} (${percentage.toFixed(2)}%)`;
           },
         },
       },
@@ -73,12 +80,11 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="w-full md:w-1/2 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold text-center mb-4">
-        Top 10 Industries
+    <div className="w-full md:w-1/2 lg:w-full mx-auto p-4 bg-white rounded-lg shadow-md dark:bg-[#334155] border border-white">
+      <h2 className="text-lg text-center mb-4 dark:text-white">
+        10 صنعت برتر در معاملات بورس امروز
       </h2>
       <Doughnut data={chartData} options={options} />
-      <p className="text-center text-gray-500 mt-2">Share of top industries</p>
     </div>
   );
 };

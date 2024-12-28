@@ -13,17 +13,16 @@ interface PriceTableProps {
 const PriceTable: React.FC<PriceTableProps> = ({ title, data }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-6">
-      <h2 className="bg-blue-600 text-white text-lg font-semibold px-6 py-3">
+      <h2 className="bg-green-700 text-white text-lg font-semibold px-6 py-3 dark:bg-[#334155]">
         {title}
       </h2>
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse">
+        <table className="table-auto w-full border-collapse border border-white">
           <thead>
-            <tr className="bg-gray-100 text-gray-600 text-sm leading-normal">
-              <th className="px-6 py-3 text-left">Name</th>
-              <th className="px-6 py-3 text-left">Industry</th>
-              <th className="px-6 py-3 text-left">Price</th>
-              <th className="px-6 py-3 text-left">Change</th>
+            <tr className="bg-yellow-100 dark:bg-[#cbd5e1] text-gray-600 text-sm leading-normal">
+              <th className="px-6 py-3 text-right">برند</th>
+              <th className="px-6 py-3 text-right">صنعت</th>
+              <th className="px-6 py-3 text-right">قیمت</th>
             </tr>
           </thead>
           <tbody className="text-gray-600 text-sm font-light">
@@ -31,21 +30,14 @@ const PriceTable: React.FC<PriceTableProps> = ({ title, data }) => {
               <tr
                 key={index}
                 className={`border-b border-gray-200 hover:bg-gray-50 ${
-                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  index % 2 === 0
+                    ? "bg-gray-50 dark:bg-[#475569] dark:text-white"
+                    : "bg-white dark:bg-[#cbd5e1]"
                 }`}
               >
                 <td className="px-6 py-3">{item.name}</td>
                 <td className="px-6 py-3">{item.Industry}</td>
                 <td className="px-6 py-3">{item.LastTradedPrice}</td>
-                <td
-                  className={`px-6 py-3 ${
-                    item.LastTradedPrice_change >= 0
-                      ? "text-green-500"
-                      : "text-red-500"
-                  }`}
-                >
-                  {item.LastTradedPrice_change}
-                </td>
               </tr>
             ))}
           </tbody>
