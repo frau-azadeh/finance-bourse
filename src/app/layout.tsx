@@ -17,10 +17,8 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="fa" dir="rtl">
-        <body className="bg-[#fff8e1]">
-          <main>
-          {children}
-          </main>
+        <body className="bg-green-50">
+          <main>{children}</main>
         </body>
       </html>
     </ThemeProvider>

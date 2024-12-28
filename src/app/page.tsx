@@ -14,11 +14,10 @@ import PriceTable from "../components/PriceTable";
 import DonutChart from "../components/DonutChart";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 const Dashboard: React.FC = () => {
   const { data, isLoading, error } = useFetchData();
-  const itemsPerPage = 20;
+  const itemsPerPage = 15;
 
   const {
     currentData,
@@ -54,8 +53,7 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <div className="flex flex-col min-h-screen dark:bg-slate-900 ">
       <div className="flex flex-1">
         {/* سایدبار */}
         <Sidebar />
@@ -66,31 +64,31 @@ const Dashboard: React.FC = () => {
           <div className="space-y-6 lg:col-span-2">
             <div className="grid grid-cols-2 gap-4">
               <MetricBox
-                title="Highest Positive Change"
+                title="بیشترین رشد"
                 color="green"
                 data={[
-                  { label: "Name", value: highestPositiveChangeItem.name },
+                  { label: "برند", value: highestPositiveChangeItem.name },
                   {
-                    label: "Change",
+                    label: "میزان تغییر",
                     value: highestPositiveChangeItem.LastTradedPrice_change,
                   },
                   {
-                    label: "Last Traded Price",
+                    label: "آخرین قیمت",
                     value: highestPositiveChangeItem.LastTradedPrice,
                   },
                 ]}
               />
               <MetricBox
-                title="Highest Negative Change"
+                title="کمترین رشد"
                 color="red"
                 data={[
-                  { label: "Name", value: highestNegativeChangeItem.name },
+                  { label: "برند", value: highestNegativeChangeItem.name },
                   {
-                    label: "Change",
+                    label: "میزان تغییر",
                     value: highestNegativeChangeItem.LastTradedPrice_change,
                   },
                   {
-                    label: "Last Traded Price",
+                    label: "آخرین قیمت",
                     value: highestNegativeChangeItem.LastTradedPrice,
                   },
                 ]}
@@ -109,8 +107,8 @@ const Dashboard: React.FC = () => {
           {/* ستون چپ */}
           <div className="space-y-6 lg:col-span-1">
             <DonutChart data={industryDistribution} />
-            <PriceTable title="Top 5 Lowest Prices" data={lowest5} />
-            <PriceTable title="Top 5 Highest Prices" data={top5} />
+            <PriceTable title="ارزانترین قیمت" data={lowest5} />
+            <PriceTable title="بیشترین قیمت" data={top5} />
           </div>
         </div>
       </div>
