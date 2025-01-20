@@ -2,6 +2,15 @@
 
 A responsive and visually appealing Finance Dashboard to display financial data, industry trends, and dynamic charts. Built using modern web technologies, this project is optimized for both functionality and user experience.
 
+## 📸 Screenshot
+
+### 💻 Dashboard View
+A clean and detailed dashboard to monitor financial data and market trends:
+
+![Dashboard View](https://github.com/frau-azadeh/finance-bourse/blob/master/dashboard.png)
+
+---
+
 ## Features
 
 📊 Dynamic Charts: Interactive bar and donut charts using Chart.js.
